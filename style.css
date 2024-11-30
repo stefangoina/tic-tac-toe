@@ -37,7 +37,20 @@ h1 {
   background-color: blanchedalmond;
 }
 .start-game {
+  display: flex;
+  flex-direction: column;
   margin-right: 50px;
+}
+button {
+  margin: 10px;
+  padding: 10px;
+}
+.start-text {
+  margin-left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 .shown {
   width: 100%;
