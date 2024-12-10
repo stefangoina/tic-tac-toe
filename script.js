@@ -4,7 +4,7 @@ let x = document.querySelector(".x");
 let o = document.querySelector(".o");
 let restart = document.querySelector(".reset");
 // add error
-startBtn.addEventListener("click", playGame());
+startBtn.addEventListener("click", playGame);
 function playGame() {
   let startText = document.querySelector(".start-text");
   startText.textContent = "Game Started! It's Player X's Turn!";
@@ -28,19 +28,40 @@ function playGame() {
         startText.textContent = "Player X's Turn";
       }
       counter++;
+      winningConditions();
     });
   });
   function reset() {
     cards.forEach((card) => {
       card.innerHTML = "";
       card.classList.remove("isClicked");
+      startText.textContent = "Game Started! It's Player X's Turn!";
+      counter = 0;
     });
+  }
+
+  function winningConditions() {
+    let win = false;
+    if (
+      cards[0].textContent == cards[4].textContent &&
+      cards[4].textContent == cards[8].textContent &&
+      cards[0].textContent != ""
+    ) {
+      console.log("You win!");
+    }
+    if (
+      cards[2].textContent == cards[4].textContent &&
+      cards[4].textContent == cards[6].textContent &&
+      cards[2].textContent != ""
+    ) {
+      console.log("You WIN2 !!");
+    }
   }
 
   restart.addEventListener("click", reset);
 }
 
 //TODO :
-// add reset button
+// add reset button (DONE)
 // make the cards clickable only once (DONE)
-// add the winning conditions
+// add the winning conditions (WIP)
