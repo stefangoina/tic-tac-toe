@@ -56,6 +56,52 @@ function playGame() {
     ) {
       console.log("You WIN2 !!");
     }
+
+    if (
+      cards[0].textContent == cards[1].textContent &&
+      cards[1].textContent == cards[2].textContent &&
+      cards[2].textContent != ""
+    ) {
+      console.log("You WIN (ROW1) !");
+    }
+
+    if (
+      cards[3].textContent == cards[4].textContent &&
+      cards[4].textContent == cards[5].textContent &&
+      cards[3].textContent != ""
+    ) {
+      console.log("You WIN (ROW2) !");
+    }
+    if (
+      cards[6].textContent == cards[7].textContent &&
+      cards[7].textContent == cards[8].textContent &&
+      cards[6].textContent != ""
+    ) {
+      console.log("You WIN (ROW3) !");
+    }
+    if (
+      cards[0].textContent == cards[3].textContent &&
+      cards[3].textContent == cards[6].textContent &&
+      cards[0].textContent != ""
+    ) {
+      console.log("You WIN (COL3) !");
+    }
+
+    if (
+      cards[1].textContent == cards[4].textContent &&
+      cards[4].textContent == cards[7].textContent &&
+      cards[1].textContent != ""
+    ) {
+      console.log("You WIN (COL2) !");
+    }
+
+    if (
+      cards[2].textContent == cards[5].textContent &&
+      cards[5].textContent == cards[8].textContent &&
+      cards[2].textContent != ""
+    ) {
+      console.log("You WIN (COL3) !");
+    }
   }
 
   restart.addEventListener("click", reset);
@@ -64,4 +110,5 @@ function playGame() {
 //TODO :
 // add reset button (DONE)
 // make the cards clickable only once (DONE)
-// add the winning conditions (WIP)
+// add the winning conditions (DONE)
+// add modal with the winner and disable the ability to click anymore and reset all the fields (WIP)
